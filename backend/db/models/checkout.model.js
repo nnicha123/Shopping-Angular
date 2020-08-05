@@ -2,13 +2,14 @@ const mongoose = require('mongoose')
 const CheckOutSchema = new mongoose.Schema({
   image: {
     type: String,
-    // required: true,
+    required: true
   },
   title: {
     type: String,
     required: true,
     minlength: 1,
-    trim: true
+    trim: true,
+    unique: true
   },
   price: {
     type: Number,
@@ -18,7 +19,7 @@ const CheckOutSchema = new mongoose.Schema({
   },
   _userId: {
     type: String,
-    // required: true
+    required: true
   }
 }, {
 
