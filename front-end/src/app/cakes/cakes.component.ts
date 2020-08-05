@@ -62,6 +62,7 @@ export class CakesComponent implements OnInit {
 
   ngOnInit(): void {}
   addCheckout(item: Item) {
+    console.log(item);
     this.taskService.addCheckout(item).subscribe((res: any) => {
       console.log(res);
       window.location.reload();
