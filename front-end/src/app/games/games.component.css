@@ -39,3 +39,10 @@ Button:focus {
   flex-direction: column;
   justify-content: space-between;
 }
+i {
+  color: rgb(128, 0, 0);
+}
+i:hover {
+  color: rgb(170, 112, 112);
+  cursor: pointer;
+}

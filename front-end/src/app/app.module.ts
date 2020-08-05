@@ -8,9 +8,10 @@ import { CakesComponent } from './cakes/cakes.component';
 import { GamesComponent } from './games/games.component';
 import { BagsComponent } from './bags/bags.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 @NgModule({
-  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent],
+  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent, FavouriteComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

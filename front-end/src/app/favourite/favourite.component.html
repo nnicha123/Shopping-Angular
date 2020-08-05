@@ -1,22 +1,16 @@
 <div style="margin-left:15px;margin-top:10px;position:relative">
-  <div *ngFor="let el of checkOut" class="checkoutOuter">
+  <div *ngFor="let el of favourite" class="checkoutOuter">
     <div class="checkOutLeft">
       <img [src]="el.image" />
       <div>{{el.title}}</div>
     </div>
     <div class="checkOutRight">
-      <div class="checkOutQuantity" style="display: flex">
-        <button class="quanButton" style="margin-left:10px">+</button>
-        <div style="width: 15px; padding-left: 5px">{{el.quantity}}</div>
-        <button class="quanButton">-</button>
-      </div>
-      <div style="margin-left:10px">${{el.price * el.quantity}}</div>
       <i class="material-icons" style="font-size: 20px;margin-right: 10px;">delete_sweep</i>
     </div>
   </div>
   <div class="totalPrice">
-    <div>Total</div>
-    <div>$</div>
+    <div>Total Items</div>
+    <div>{{favourite.length}}</div>
   </div>
   <button style="position:absolute;bottom:-45px;right:5px; border:none;color:white;padding:10px">Logout</button>
 </div>
