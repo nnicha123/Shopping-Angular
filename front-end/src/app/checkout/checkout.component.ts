@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TaskService } from '../task.service';
+import { Checkout } from '../models/checkout.model';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
-  checkOut = [
-    {
-      id: 1,
-      image: '../../assets/cakes/blackwedding.PNG',
-      title: 'The black wedding cake',
-      price: 30,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: '../../assets/cakes/cupcake.PNG',
-      title: 'The pink jolly cupcake',
-      price: 10,
-      quantity: 1,
-    },
-  ];
-  constructor() {}
+  checkOut: Checkout[];
+  constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.taskService.getCheckout().subscribe((res: any) => {
+      this.checkOut = res;
+      console.log(this.checkOut);
+    });
+  }
+  deleteCheckout(checkout: Checkout) {
+    this.taskService.deleteCheckout(checkout._id).subscribe((res: any) => {
+      window.location.reload();
+    });
+  }
 }

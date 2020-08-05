@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   loginUser(username: string, password: string) {
     console.log(username, password);
-    this.taskService.loginUser(username, password).subscribe((res: User) => {
+    this.taskService.loginUser(username, password).subscribe((res: any) => {
       console.log(res);
-      this.router.navigate(['/']);
+      this.router.navigate([`/${res.id}`]);
     });
   }
 }

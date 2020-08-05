@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Favourite } from '../models/favourite.model';
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-favourite',
   templateUrl: './favourite.component.html',
   styleUrls: ['./favourite.component.css'],
 })
 export class FavouriteComponent implements OnInit {
-  favourite = [
-    {
-      id: 1,
-      image: '../../assets/cakes/blackwedding.PNG',
-      title: 'The black wedding cake',
-      price: 30,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: '../../assets/cakes/cupcake.PNG',
-      title: 'The pink jolly cupcake',
-      price: 10,
-      quantity: 1,
-    },
-  ];
-  constructor() {}
+  favourite: Favourite[];
+  constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.taskService.getFavourite().subscribe((res: any) => {
+      console.log(res);
+      this.favourite = res;
+    });
+  }
+  deleteFavourite(favourite: Favourite) {
+    this.taskService.deleteFavourite(favourite._id).subscribe((res: any) => {
+      window.location.reload();
+    });
+  }
 }

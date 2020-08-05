@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Checkout } from '../models/checkout.model';
 import { Item } from '../models/item.model';
-
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-cakes',
   templateUrl: './cakes.component.html',
@@ -58,10 +58,19 @@ export class CakesComponent implements OnInit {
       quantity: 1,
     },
   ];
-  constructor() {}
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {}
   addCheckout(item: Item) {
-    console.log(item);
+    this.taskService.addCheckout(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
+  }
+  addFavourite(item: Object) {
+    this.taskService.addFavourite(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
   }
 }

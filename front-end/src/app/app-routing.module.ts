@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: ShoppingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: ':userId', component: ShoppingComponent },
 ];
 
 @NgModule({

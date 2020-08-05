@@ -7,7 +7,7 @@
     <div class="cardBottom">
       <div>${{item.price}}</div>
       <div class="cardDivRight">
-        <i class="material-icons" style="font-size: 20px;margin-right: 10px;">favorite</i>
+        <i class="material-icons" style="font-size: 20px;margin-right: 10px;" (click)="addFavourite(item)">favorite</i>
         <i class="material-icons" style="font-size: 20px;" (click)="addCheckout(item)">shopping_cart</i>
       </div>
     </div>

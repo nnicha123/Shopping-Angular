@@ -15,7 +15,25 @@ export class TaskService {
   registerUser(user: User) {
     return this.webReqService.post('users/register', user);
   }
-  loginUser(username:string,password:string){
-    return this.webReqService.post('users/login',{username,password})
+  loginUser(username: string, password: string) {
+    return this.webReqService.post('users/login', { username, password });
+  }
+  addCheckout(item: Item) {
+    return this.webReqService.post(':userId/checkouts', item);
+  }
+  addFavourite(item: Object) {
+    return this.webReqService.post(':userId/favourites', item);
+  }
+  getCheckout() {
+    return this.webReqService.get(':userId/checkouts');
+  }
+  getFavourite() {
+    return this.webReqService.get(':userId/favourites');
+  }
+  deleteCheckout(id: string) {
+    return this.webReqService.delete(`:userId/checkouts/${id}`);
+  }
+  deleteFavourite(id: string) {
+    return this.webReqService.delete(`:userId/favourites/${id}`);
   }
 }

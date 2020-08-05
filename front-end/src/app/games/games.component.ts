@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../task.service';
+import { Item } from '../models/item.model';
 
 @Component({
   selector: 'app-games',
@@ -44,7 +46,18 @@ export class GamesComponent implements OnInit {
       quantity: 1,
     },
   ];
-  constructor() {}
-
+  constructor(private taskService: TaskService) {}
+  addCheckout(item: Item) {
+    this.taskService.addCheckout(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
+  }
+  addFavourite(item: Object) {
+    this.taskService.addFavourite(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
+  }
   ngOnInit(): void {}
 }

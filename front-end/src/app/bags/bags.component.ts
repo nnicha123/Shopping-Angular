@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Item } from '../models/item.model';
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-bags',
   templateUrl: './bags.component.html',
@@ -44,7 +45,18 @@ export class BagsComponent implements OnInit {
       quantity: 1,
     },
   ];
-  constructor() {}
-
+  constructor(private taskService: TaskService) {}
+  addCheckout(item: Item) {
+    this.taskService.addCheckout(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
+  }
+  addFavourite(item: Object) {
+    this.taskService.addFavourite(item).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    });
+  }
   ngOnInit(): void {}
 }
