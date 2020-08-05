@@ -1,0 +1,23 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="nav">
+  <a [ngClass]="{'active':activeTag[0]}">All</a>
+  <a [ngClass]="{'active':activeTag[1]}">Bags</a>
+  <a [ngClass]="{'active':activeTag[2]}">Cakes</a>
+  <a [ngClass]="{'active':activeTag[3]}">Games</a>
+</div>
+<div class="content" style="margin-bottom: 30px;">
+  <section class="content-left">
+    <h2>Shopping Items</h2>
+    <app-cakes></app-cakes>
+    <app-games></app-games>
+    <app-bags></app-bags>
+  </section>
+  <section class="content-right">
+    <h2 style="margin-left: 0;">CheckOut</h2>
+    <app-checkout></app-checkout>
+  </section>
+
+</div>
+<Footer
+  style="text-align: center; background: #001529; color: white; padding: 15px; display: flex; justify-content: center; align-items: center">
+  Shopping Project With Angular ©2020 Created by Nicha N.</Footer>
