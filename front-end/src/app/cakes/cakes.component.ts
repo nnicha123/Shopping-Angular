@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Checkout } from '../models/checkout.model';
+import { Item } from '../models/item.model';
 
 @Component({
   selector: 'app-cakes',
@@ -59,4 +61,7 @@ export class CakesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  addCheckout(item: Item) {
+    console.log(item);
+  }
 }

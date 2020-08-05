@@ -1,0 +1,14 @@
+<div class="outerLogin">
+  <div class="form">
+    <h1>Login</h1>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" #usernameInput />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" #passwordInput />
+    </div>
+    <button (click)="loginUser(usernameInput.value,passwordInput.value)">Login</button>
+  </div>
+</div>

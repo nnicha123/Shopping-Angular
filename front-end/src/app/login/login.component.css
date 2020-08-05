@@ -1,0 +1,61 @@
+.outerLogin {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: darkgray;
+}
+.form {
+  color: darkgray;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: beige;
+  border-radius: 8px;
+}
+.form-group {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+.form-group label {
+  margin-bottom: 10px;
+}
+.form-group input {
+  width: 250px;
+  border: none;
+  outline: none;
+  background: rgb(100, 79, 79);
+  height: 30px;
+  border-radius: 2px;
+}
+.form-group input:focus {
+  background-color: rgb(187, 31, 57);
+  color: white;
+}
+.form button {
+  background: rgb(100, 79, 79);
+  padding: 10px 20px;
+  border: none;
+  margin-top: 35px;
+  transition: all 0.2s ease;
+  outline: none;
+  color: darkgray;
+  border-radius: 2px;
+}
+.form button:active {
+  background-color: rgb(187, 31, 57);
+  transform: scale(0.9);
+}

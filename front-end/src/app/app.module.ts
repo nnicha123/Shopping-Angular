@@ -9,9 +9,11 @@ import { GamesComponent } from './games/games.component';
 import { BagsComponent } from './bags/bags.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent, FavouriteComponent],
+  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent, FavouriteComponent, LoginComponent, RegisterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
