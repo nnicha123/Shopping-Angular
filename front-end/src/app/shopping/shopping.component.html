@@ -1,9 +1,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="nav">
-  <a [ngClass]="{'active':activeTag[0]}" (click)="activeTag = [true,false,false,false]">All</a>
-  <a [ngClass]="{'active':activeTag[1]}" (click)="activeTag = [false,true,false,false]">Bags</a>
-  <a [ngClass]="{'active':activeTag[2]}" (click)="activeTag = [false,false,true,false]">Cakes</a>
-  <a [ngClass]="{'active':activeTag[3]}" (click)="activeTag = [false,false,false,true]">Games</a>
+  <div class="nav-left">
+    <a class="normalClass" [ngClass]="{'setBlue':activeTag[0]}" (click)="activeTag = [true,false,false,false]">All</a>
+    <a class="normalClass" [ngClass]="{'setBlue':activeTag[1]}" (click)="activeTag = [false,true,false,false]">Bags</a>
+    <a class="normalClass" [ngClass]="{'setBlue':activeTag[2]}" (click)="activeTag = [false,false,true,false]">Cakes</a>
+    <a class="normalClass" [ngClass]="{'setBlue':activeTag[3]}" (click)="activeTag = [false,false,false,true]">Games</a>
+  </div>
+  <div class="nav-right">
+    <a style="text-decoration:none;color:rgba(255, 255, 255, 0.65)" [routerLink]="['/login']">Login</a>
+    <a style="text-decoration:none;color:rgba(255, 255, 255, 0.65)" [routerLink]="['/register']">Register</a>
+  </div>
 </div>
 <div class="content" style="margin-bottom: 30px;">
   <section class="content-left">

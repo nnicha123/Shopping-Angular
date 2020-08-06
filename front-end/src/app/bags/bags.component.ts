@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../models/item.model';
 import { TaskService } from '../task.service';
+import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-bags',
   templateUrl: './bags.component.html',
@@ -45,18 +46,30 @@ export class BagsComponent implements OnInit {
       quantity: 1,
     },
   ];
-  constructor(private taskService: TaskService) {}
+  userId: string;
+  constructor(
+    private taskService: TaskService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      if (params.userId) {
+        this.userId = params.userId;
+      }
+    });
+  }
+
   addCheckout(item: Item) {
-    this.taskService.addCheckout(item).subscribe((res: any) => {
+    this.taskService.addCheckout(this.userId, item).subscribe((res: any) => {
       console.log(res);
       window.location.reload();
     });
   }
   addFavourite(item: Object) {
-    this.taskService.addFavourite(item).subscribe((res: any) => {
+    this.taskService.addFavourite(this.userId, item).subscribe((res: any) => {
       console.log(res);
       window.location.reload();
     });
   }
-  ngOnInit(): void {}
 }

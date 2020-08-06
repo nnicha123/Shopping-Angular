@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TaskService } from '../task.service';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   constructor(private taskService: TaskService, private router: Router) {}
-
   ngOnInit(): void {}
   loginUser(username: string, password: string) {
     console.log(username, password);

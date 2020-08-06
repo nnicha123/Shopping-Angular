@@ -11,9 +11,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
-  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent, FavouriteComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, ShoppingComponent, CakesComponent, GamesComponent, BagsComponent, CheckoutComponent, FavouriteComponent, LoginComponent, RegisterComponent, NavComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

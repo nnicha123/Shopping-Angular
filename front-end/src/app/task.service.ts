@@ -18,22 +18,28 @@ export class TaskService {
   loginUser(username: string, password: string) {
     return this.webReqService.post('users/login', { username, password });
   }
-  addCheckout(item: Item) {
-    return this.webReqService.post(':userId/checkouts', item);
+  addCheckout(userId: string, item: Item) {
+    return this.webReqService.post(`${userId}/checkouts`, item);
   }
-  addFavourite(item: Object) {
-    return this.webReqService.post(':userId/favourites', item);
+  addFavourite(userId: string, item: Object) {
+    return this.webReqService.post(`${userId}/favourites`, item);
   }
-  getCheckout() {
-    return this.webReqService.get(':userId/checkouts');
+  getCheckout(userId: string) {
+    return this.webReqService.get(`${userId}/checkouts`);
   }
-  getFavourite() {
-    return this.webReqService.get(':userId/favourites');
+  getFavourite(userId: string) {
+    return this.webReqService.get(`${userId}/favourites`);
   }
-  deleteCheckout(id: string) {
-    return this.webReqService.delete(`:userId/checkouts/${id}`);
+  deleteCheckout(userId: string, id: string) {
+    console.log(userId, id);
+    return this.webReqService.delete(`${userId}/checkouts/${id}`);
   }
-  deleteFavourite(id: string) {
-    return this.webReqService.delete(`:userId/favourites/${id}`);
+  deleteFavourite(userId: string, id: string) {
+    return this.webReqService.delete(`${userId}/favourites/${id}`);
+  }
+  updateCheckOut(userId: string, id: string, newQuantity: number) {
+    return this.webReqService.put(`${userId}/checkouts/${id}`, {
+      quantity: newQuantity,
+    });
   }
 }

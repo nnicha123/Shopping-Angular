@@ -67,3 +67,12 @@ button:hover {
   background: rgb(170, 112, 112);
   cursor: pointer;
 }
+button:disabled {
+  background-color: darkgray;
+}
+button:disabled:hover {
+  /* background: rgb(170, 112, 112); */
+  /* cursor: pointer; */
+  background-color: darkgray;
+  cursor: not-allowed;
+}
